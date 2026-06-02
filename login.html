@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <section>
-    <h1>Formulario Login</h1>
+  <!-- Menú de navegación -->
+  <header>
+    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
+      <h1 class="text-xl font-bold">Lavadero Juan</h1>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+        <a href="register.html" class="hover:text-yellow-300 transition">Register</a>
+        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
+        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+      </div>
+    </nav>
+  </header>
 
-    <form action="index.html">
+  <!-- Formulario Login -->
+  <section class="flex justify-center items-center h-screen">
+    <form action="index.html" class="bg-white p-6 rounded shadow-md w-96 flex flex-col gap-4">
+      <h1 class="text-2xl font-bold text-center">Formulario Login</h1>
 
-        <label
-        for="cualquiera">Usuario</label>
-        <input type="text" id="cualquiera">
-        <br>
-        <label
-        for="cualquiera">Contraseña</label>
-        <input type="password" id="cualquiera">
-        <br>
-        <label
-        for="edad">edad
-        </label>
-        <input 
-        type="password" id="edad">
-        <br>
-        <label for="">Lista de seleccion</label>
-        <select name="opciones" id="opciones">
-            <optgroup label="Principales">
-            <option value="opcion1" selected>primera
-            </option>
-            <option value="opcion2">segunda
-            </option>
-            </optgroup>
-            <optgroup label="Otras">
-            <option value="opcion3">tercera
-            </option>
-            <option value="opcion4">cuarta
-            </option>
-            </optgroup>
-        </select>
-        <br><br>
-        <button>Logear</button>
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" class="border p-2 rounded">
 
+      <label for="contraseña">Contraseña</label>
+      <input type="password" id="contraseña" class="border p-2 rounded">
+
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" class="border p-2 rounded">
+
+      <label for="opciones">Lista de selección</label>
+      <select id="opciones" class="border p-2 rounded">
+        <optgroup label="Principales">
+          <option value="opcion1" selected>Primera</option>
+          <option value="opcion2">Segunda</option>
+        </optgroup>
+        <optgroup label="Otras">
+          <option value="opcion3">Tercera</option>
+          <option value="opcion4">Cuarta</option>
+        </optgroup>
+      </select>
+
+      <button class="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">Logear</button>
     </form>
-    </section>
-<section>
-    <button> <a href="recuperar_contraseña.html">Recuperar Contraseña</a></button>
-</section>
-</body>
+  </section>
 
+  <!-- Recuperar contraseña -->
+  <section class="text-center mt-4">
+    <a href="recuperar_contraseña.html" class="text-blue-600 hover:underline">¿Olvidaste tu contraseña?</a>
+  </section>
+
+</body>
 </html>

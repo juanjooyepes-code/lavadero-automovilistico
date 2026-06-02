@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Servicios - Lavadero Juan</title>
+  <!-- Tailwind + estilos personalizados -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Menú de navegación -->
+  <header>
+    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
+      <h1 class="text-xl font-bold">Lavadero Juan</h1>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
+        <a href="register.html" class="hover:text-yellow-300 transition">Register</a>
+        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
+        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container text-center">
+    <h1 class="text-3xl font-bold mb-6">Nuestros Servicios</h1>
+    <p class="mb-6">En Lavadero Juan ofrecemos diferentes tipos de lavado para tu vehículo, adaptados a tus necesidades y presupuesto.</p>
+  </main>
+
+  <!-- Lista de servicios con precios y descripciones -->
+  <section class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
+      <h2 class="text-xl font-semibold mb-2">Lavado Básico</h2>
+      <p>Incluye únicamente el exterior del auto, sin productos VIP.</p>
+      <p class="mt-2 font-bold">Precio: $30.000</p>
+      <p>Tiempo de entrega: 1 hora</p>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
+      <h2 class="text-xl font-semibold mb-2">Lavado Completo</h2>
+      <p>Incluye exterior e interior del carro, sin productos VIP.</p>
+      <p class="mt-2 font-bold">Precio: $60.000</p>
+      <p>Tiempo de entrega: 1 hora 30 min</p>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
+      <h2 class="text-xl font-semibold mb-2">Lavado Premium</h2>
+      <p>Incluye todo lo anterior más lavado especial de llantas y jabón con mejor efecto de brillo.</p>
+      <p class="mt-2 font-bold">Precio: $120.000</p>
+      <p>Tiempo de entrega: 3 horas</p>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
+      <h2 class="text-xl font-semibold mb-2">Lavado VIP</h2>
+      <p>Incluye todo lo anterior más una membresía de 2 lavadas gratis, jabones especiales, lavado de llantas y producto anti manchas permanentes.</p>
+      <p class="mt-2 font-bold">Precio: $150.000</p>
+      <p>Tiempo de entrega: 4 horas</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center p-4 mt-6">
+    <h2 class="text-lg font-semibold">Lavadero Juan</h2>
+    <p>Tu auto siempre limpio y brillante</p>
+  </footer>
+
+</body>
+</html>

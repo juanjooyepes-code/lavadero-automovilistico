@@ -1,113 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>lavadero automovilistico juan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Lavadero Automovilístico Juan</title>
+  <!-- Aquí integras Tailwind y tu CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body class="bg-gray-100">
 
-<body>
+  <!-- Menú de navegación -->
+  <header>
+    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
+      <h1 class="text-xl font-bold">Lavadero Juan</h1>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
+        <a href="register.html" class="hover:text-yellow-300 transition">Register</a>
+        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
+        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+      </div>
+    </nav>
+  </header>
 
-    <header>
-        <h2><a href="login.html">Login</a></h2>
-        </br>
-        <h2><a href="registrate.html">Registrate</a></h2>
-    </header>
-
-    <main>
-        <h1>Lavadero automovilistico Juan</h1>
-    </main>
-
-    <ul>
-        <li>lista de lavados</li>
-        <li>lavado basico</li>
-        <li>lavado completo</li>
-        <li>lavado premium</li>
-        <li>lavado vip</li>
-    </ul>
-
-    <h2>INTRODUCCION A LO QUE NOS DEDICAMOS</h2>
-
-    <p>
-        Bienvenidos al lavadero automovilistico juan donde ofrecemos el mejor servicio y la mejor
-        actitud,donde incluimos cada detalle a la perfeccion y contamos con un servicio vip en el
-        cual tendra multiples beneficios como:no hacer filas,acceso a todas las opciones de lavado y
-        mas,que estas esperadno por tu turno ya.
+  <!-- Contenido principal -->
+  <main class="container text-center">
+    <h1 class="text-3xl font-bold mb-4">Lavadero Automovilístico Juan</h1>
+    <p class="mb-6">
+      Bienvenidos al lavadero automovilístico Juan, donde ofrecemos el mejor servicio y la mejor actitud.
+      Contamos con un servicio VIP con múltiples beneficios como no hacer filas, acceso a todas las opciones de lavado y más.
     </p>
+  </main>
 
-    <section>
-        <h2>DEMOSTRACION</h2>
-        <p>IMAGEN:</p>
-    </section>
+  <!-- Lista de lavados -->
+  <section class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Lista de Lavados</h2>
+    <ul class="list-disc list-inside text-left max-w-md mx-auto">
+      <li>Lavado Básico</li>
+      <li>Lavado Completo</li>
+      <li>Lavado Premium</li>
+      <li>Lavado VIP</li>
+    </ul>
+  </section>
 
-    <img src="lavadero-automovilistico de carros 768x432.jpg"
-        alt="lavadero-automovilistico"
-        height="500px"
-        width="500px">
+  <!-- Imagen y video -->
+  <section class="p-6 flex flex-col md:flex-row gap-6 justify-center items-center">
+    <div>
+      <h2 class="text-xl font-semibold mb-2">Demostración</h2>
+      <img src="lavadero-automovilistico de carros 768x432.jpg" alt="Lavadero Automovilístico"
+           class="rounded shadow-md w-80 hover:scale-105 transition">
+      <p class="mt-2">Imagen de ejemplo</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold mb-2">Video</h2>
+      <iframe width="400" height="250"
+              src="https://www.youtube.com/embed/SK2MO59eFT8"
+              title="Puente de lavado CB de Kärcher"
+              frameborder="0" allowfullscreen
+              class="rounded shadow-md"></iframe>
+    </div>
+  </section>
 
-    <p>Imagen de ejemplo</p>
-
-    <p>VIDEO</p>
-
-    <p>IFRAME:</p>
-
-    <iframe
-        width="500"
-        height="250"
-        src="https://www.youtube.com/embed/SK2MO59eFT8"
-        title="Puente de lavado CB de Kärcher"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe></iframe>
-
-    <h2>TABLA</h2>
-
-    <table border="">
-        <caption>Precios de Lavados</caption>
-
-        <thead>
-            <tr>
-                <th scope="col">tipos lavado</th>
-                <th scope="col">precios</th>
-                <th scope="col">entregado</th>
-            </tr>
-
-            <tbody>
-                <tr>
-                    <td scope="row">lavado basico</th>
-                    <td>30.000</td>
-                    <td>1 hora</td>
-                </tr>
-
-                <tr>
-                    <td scope="row">lavado normal</th>
-                    <td>60.000</td>
-                    <td>1 hora 30m</td>
-                </tr>
-
-                <tr>
-                    <td scope="row">lavado premium</th>
-                    <td>120.000</td>
-                    <td>3 horas</td>
-                </tr>
-
-                <tr>
-                    <td scope="row">lavado vip</th>
-                    <td>150.000</td>
-                    <td>4 horas</td>
-                </tr>
-
+  <!-- Tabla de precios -->
+  <section class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Precios de Lavados</h2>
+    <table class="table-auto border-collapse border border-gray-400 mx-auto bg-white text-black">
+      <caption class="mb-2 font-bold">Precios de Lavados</caption>
+      <thead>
+        <tr class="bg-blue-600 text-white">
+          <th class="border px-4 py-2">Tipo de lavado</th>
+          <th class="border px-4 py-2">Precio</th>
+          <th class="border px-4 py-2">Tiempo de entrega</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">Lavado Básico</td>
+          <td class="border px-4 py-2">$30.000</td>
+          <td class="border px-4 py-2">1 hora</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Lavado Normal</td>
+          <td class="border px-4 py-2">$60.000</td>
+          <td class="border px-4 py-2">1 hora 30 min</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Lavado Premium</td>
+          <td class="border px-4 py-2">$120.000</td>
+          <td class="border px-4 py-2">3 horas</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Lavado VIP</td>
+          <td class="border px-4 py-2">$150.000</td>
+          <td class="border px-4 py-2">4 horas</td>
+        </tr>
+      </tbody>
     </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center p-4 mt-6">
+    <h2 class="text-lg font-semibold">Contáctenos</h2>
+    <p>WhatsApp: +57 304 3751091</p>
+  </footer>
 
 </body>
-
-<footer>
-    <br>
-    <h2><th>Contactenos</th></h2>
-    WhatsApp:+57 304 3751091+
-</footer>
-
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-gray-100">
+
+  <!-- Menú de navegación -->
+  <header>
+    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
+      <h1 class="text-xl font-bold">Lavadero Juan</h1>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
+        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
+        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Formulario de Registro -->
+  <section class="flex justify-center items-center h-screen">
+    <form action="index.html" class="bg-white p-6 rounded shadow-md w-96 flex flex-col gap-4">
+      <h1 class="text-2xl font-bold text-center">Formulario de Registro</h1>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" class="border p-2 rounded">
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" class="border p-2 rounded">
+
+      <label for="contraseña">Contraseña</label>
+      <input type="password" id="contraseña" class="border p-2 rounded">
+
+      <label for="confirmar">Confirmar Contraseña</label>
+      <input type="password" id="confirmar" class="border p-2 rounded">
+
+      <button class="bg-green-600 text-white p-2 rounded hover:bg-green-700 transition">Registrarse</button>
+    </form>
+  </section>
+
+</body>
+</html>

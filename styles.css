@@ -1,0 +1,161 @@
+/* Fondo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, rgb(245, 68, 68), rgb(31, 40, 205));
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: rgba(235, 250, 25, 0.919);
+    padding: 16px;
+    margin: 10px;
+    border-radius: 5%;
+    background: linear-gradient(to right, rgb(245, 68, 68), rgb(31, 40, 205));
+}
+
+/* Header */
+#header-container {
+    background-color: rgb(247, 250, 250);
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: rgb(248, 247, 241);
+    text-align: center;
+}
+
+/* Caja de contacto */
+.caja {
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+    border: 2px solid blue;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* Menú de navegación con Flexbox */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(31, 40, 205);
+    padding: 12px;
+    color: white;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: yellow;
+    transform: scale(1.05);
+}
+
+/* Botones */
+button {
+    background-color: rgb(245, 68, 68);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(31, 40, 205);
+    transform: scale(1.05);
+}
+
+/* Formularios */
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: rgb(245, 68, 68);
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* Tablas */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: rgb(245, 68, 68);
+    color: white;
+}
+
+/* Responsividad con media queries */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    .container {
+        width: 70%;
+        margin: auto;
+    }
+}
+
