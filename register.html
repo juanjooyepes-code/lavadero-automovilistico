@@ -1,45 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Lavadero Juan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos base locales -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0f172a',
+            brandBlue: '#3b82f6',
+            brandBlueHover: '#2563eb',
+            brandGold: '#fbbf24',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
 
-  <!-- Menú de navegación -->
-  <header>
-    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
-      <h1 class="text-xl font-bold">Lavadero Juan</h1>
-      <div class="flex gap-4">
-        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
-        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
-        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
-        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+  <!-- Menú de navegación (Flexbox) -->
+  <header class="bg-brandDark sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center py-4 gap-4">
+      <a href="index.html#inicio" class="text-white text-2xl font-extrabold tracking-tight hover:scale-105 transition-all duration-300">
+        Lavadero<span class="text-brandBlue">Juan</span>
+      </a>
+      <div class="flex flex-wrap gap-3 items-center justify-center">
+        <a href="index.html#inicio" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Inicio</a>
+        <a href="Lavados.html" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Servicios</a>
+        <a href="index.html#demostracion" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Demostración</a>
+        <a href="index.html#precios" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Precios</a>
+        <a href="Contacto.html" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Contacto</a>
+        <a href="login.html" class="bg-brandBlue hover:bg-brandBlueHover text-white font-bold px-4 py-2 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all duration-300">
+          Ingresar
+        </a>
       </div>
     </nav>
   </header>
 
   <!-- Formulario de Registro -->
-  <section class="flex justify-center items-center h-screen">
-    <form action="index.html" class="bg-white p-6 rounded shadow-md w-96 flex flex-col gap-4">
-      <h1 class="text-2xl font-bold text-center">Formulario de Registro</h1>
+  <main class="flex-grow flex items-center justify-center py-12 px-6">
+    <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 w-full max-w-md">
+      <h2 class="text-3xl font-extrabold text-brandDark mb-6 text-center">Crear una Cuenta</h2>
+      
+      <form action="index.html" method="get" class="flex flex-col gap-4">
+        
+        <div>
+          <label for="nombre" class="block text-sm font-semibold text-slate-700 mb-1">Nombre Completo</label>
+          <input type="text" id="nombre" class="w-full px-4 py-2 border border-slate-300 rounded-lg bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brandBlue/30 focus:border-brandBlue transition duration-200" placeholder="Tu nombre y apellido" required>
+        </div>
 
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" class="border p-2 rounded">
+        <div>
+          <label for="correo" class="block text-sm font-semibold text-slate-700 mb-1">Correo Electrónico</label>
+          <input type="email" id="correo" class="w-full px-4 py-2 border border-slate-300 rounded-lg bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brandBlue/30 focus:border-brandBlue transition duration-200" placeholder="nombre@ejemplo.com" required>
+        </div>
 
-      <label for="correo">Correo</label>
-      <input type="email" id="correo" class="border p-2 rounded">
+        <div>
+          <label for="contraseña" class="block text-sm font-semibold text-slate-700 mb-1">Contraseña</label>
+          <input type="password" id="contraseña" class="w-full px-4 py-2 border border-slate-300 rounded-lg bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brandBlue/30 focus:border-brandBlue transition duration-200" placeholder="••••••••" required>
+        </div>
 
-      <label for="contraseña">Contraseña</label>
-      <input type="password" id="contraseña" class="border p-2 rounded">
+        <div>
+          <label for="confirmar" class="block text-sm font-semibold text-slate-700 mb-1">Confirmar Contraseña</label>
+          <input type="password" id="confirmar" class="w-full px-4 py-2 border border-slate-300 rounded-lg bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brandBlue/30 focus:border-brandBlue transition duration-200" placeholder="••••••••" required>
+        </div>
 
-      <label for="confirmar">Confirmar Contraseña</label>
-      <input type="password" id="confirmar" class="border p-2 rounded">
+        <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-lg shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200 mt-2">
+          Registrarse
+        </button>
+      </form>
+      
+      <div class="text-center mt-6">
+        <span class="text-sm text-slate-500">¿Ya tienes una cuenta? <a href="login.html" class="text-brandBlue font-semibold hover:underline">Inicia Sesión</a></span>
+      </div>
+    </div>
+  </main>
 
-      <button class="bg-green-600 text-white p-2 rounded hover:bg-green-700 transition">Registrarse</button>
-    </form>
-  </section>
+  <!-- Footer -->
+  <footer class="bg-brandDark text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl font-extrabold">Lavadero Juan</h2>
+        <p class="text-slate-400 mt-2">Tu auto siempre limpio y brillante, con la mejor atención de la ciudad.</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-brandGold font-bold">WhatsApp: +57 1234567890</p>
+        <p class="text-slate-400 text-sm mt-1">Medellín, Antioquia, Colombia</p>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      &copy; 2026 Lavadero Automovilístico Juan. Todos los derechos reservados.
+    </div>
+  </footer>
 
 </body>
 </html>

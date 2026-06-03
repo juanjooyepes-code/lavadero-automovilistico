@@ -2,69 +2,127 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios - Lavadero Juan</title>
-  <!-- Tailwind + estilos personalizados -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos base locales -->
   <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0f172a',
+            brandBlue: '#3b82f6',
+            brandBlueHover: '#2563eb',
+            brandGold: '#fbbf24',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-  <!-- Menú de navegación -->
-  <header>
-    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
-      <h1 class="text-xl font-bold">Lavadero Juan</h1>
-      <div class="flex gap-4">
-        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
-        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
-        <a href="register.html" class="hover:text-yellow-300 transition">Register</a>
-        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
-        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+  <!-- Menú de navegación (Flexbox) -->
+  <header class="bg-brandDark sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center py-4 gap-4">
+      <a href="index.html#inicio" class="text-white text-2xl font-extrabold tracking-tight hover:scale-105 transition-all duration-300">
+        Lavadero<span class="text-brandBlue">Juan</span>
+      </a>
+      <div class="flex flex-wrap gap-3 items-center justify-center">
+        <a href="index.html#inicio" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Inicio</a>
+        <a href="Lavados.html" class="text-brandGold bg-slate-800 font-semibold px-3 py-2 rounded-lg transition duration-300">Servicios</a>
+        <a href="index.html#demostracion" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Demostración</a>
+        <a href="index.html#precios" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Precios</a>
+        <a href="Contacto.html" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Contacto</a>
+        <a href="login.html" class="bg-brandBlue hover:bg-brandBlueHover text-white font-bold px-4 py-2 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all duration-300">
+          Ingresar
+        </a>
       </div>
     </nav>
   </header>
 
   <!-- Contenido principal -->
-  <main class="container text-center">
-    <h1 class="text-3xl font-bold mb-6">Nuestros Servicios</h1>
-    <p class="mb-6">En Lavadero Juan ofrecemos diferentes tipos de lavado para tu vehículo, adaptados a tus necesidades y presupuesto.</p>
+  <main class="bg-gradient-to-br from-brandDark to-slate-900 text-white py-16 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-extrabold mb-4 tracking-tight">Nuestros Servicios</h1>
+      <p class="text-lg text-slate-300">Ofrecemos diferentes opciones de limpieza adaptadas al cuidado de tu auto y a tu disponibilidad.</p>
+    </div>
   </main>
 
   <!-- Lista de servicios con precios y descripciones -->
-  <section class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
-      <h2 class="text-xl font-semibold mb-2">Lavado Básico</h2>
-      <p>Incluye únicamente el exterior del auto, sin productos VIP.</p>
-      <p class="mt-2 font-bold">Precio: $30.000</p>
-      <p>Tiempo de entrega: 1 hora</p>
-    </div>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
+    <h2 class="text-3xl font-extrabold text-brandDark text-center mb-12">Elige el Plan Perfecto</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      <!-- Básico -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-brandGold flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+        <div>
+          <h3 class="text-2xl font-bold text-brandDark mb-3">Lavado Básico</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Limpieza exterior a presión, eliminación de polvo superficial y secado con paño de microfibra de alta absorción. Ideal para mantenimiento rápido.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100">
+          <div class="text-3xl font-extrabold text-brandBlue mb-2">$30.000</div>
+          <p class="text-xs text-slate-500 font-medium">⏳ Tiempo estimado de entrega: 1 hora</p>
+        </div>
+      </div>
 
-    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
-      <h2 class="text-xl font-semibold mb-2">Lavado Completo</h2>
-      <p>Incluye exterior e interior del carro, sin productos VIP.</p>
-      <p class="mt-2 font-bold">Precio: $60.000</p>
-      <p>Tiempo de entrega: 1 hora 30 min</p>
-    </div>
+      <!-- Completo -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-brandBlue flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+        <div>
+          <h3 class="text-2xl font-bold text-brandDark mb-3">Lavado Completo</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Incluye lavado exterior detallado, aspirado completo de la cabina y el baúl, limpieza de paneles y marcos de puertas con silicona protectora.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100">
+          <div class="text-3xl font-extrabold text-brandBlue mb-2">$60.000</div>
+          <p class="text-xs text-slate-500 font-medium">⏳ Tiempo estimado de entrega: 1 hora 30 min</p>
+        </div>
+      </div>
 
-    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
-      <h2 class="text-xl font-semibold mb-2">Lavado Premium</h2>
-      <p>Incluye todo lo anterior más lavado especial de llantas y jabón con mejor efecto de brillo.</p>
-      <p class="mt-2 font-bold">Precio: $120.000</p>
-      <p>Tiempo de entrega: 3 horas</p>
-    </div>
+      <!-- Premium -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-brandBlue flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+        <div>
+          <h3 class="text-2xl font-bold text-brandDark mb-3">Lavado Premium</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Limpieza exterior e interior profunda, abrillantado de rines y llantas, y aplicación de jabón espumoso con cera selladora que repele el polvo y el agua.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100">
+          <div class="text-3xl font-extrabold text-brandBlue mb-2">$120.000</div>
+          <p class="text-xs text-slate-500 font-medium">⏳ Tiempo estimado de entrega: 3 horas</p>
+        </div>
+      </div>
 
-    <div class="bg-white p-4 rounded shadow hover:scale-105 transition">
-      <h2 class="text-xl font-semibold mb-2">Lavado VIP</h2>
-      <p>Incluye todo lo anterior más una membresía de 2 lavadas gratis, jabones especiales, lavado de llantas y producto anti manchas permanentes.</p>
-      <p class="mt-2 font-bold">Precio: $150.000</p>
-      <p>Tiempo de entrega: 4 horas</p>
+      <!-- VIP -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-emerald-500 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+        <div>
+          <h3 class="text-2xl font-bold text-brandDark mb-3">Lavado VIP</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Tratamiento de spa para tu auto. Incluye lavado premium detallado, desinfección de ductos con ozono, pulido rápido de vidrios y una membresía con 2 lavados de obsequio.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100">
+          <div class="text-3xl font-extrabold text-brandBlue mb-2">$150.000</div>
+          <p class="text-xs text-slate-500 font-medium">⏳ Tiempo estimado de entrega: 4 horas</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white text-center p-4 mt-6">
-    <h2 class="text-lg font-semibold">Lavadero Juan</h2>
-    <p>Tu auto siempre limpio y brillante</p>
+  <footer class="bg-brandDark text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl font-extrabold">Lavadero Juan</h2>
+        <p class="text-slate-400 mt-2">Tu auto siempre limpio y brillante, con la mejor atención de la ciudad.</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-brandGold font-bold">WhatsApp: +57 1234567890</p>
+        <p class="text-slate-400 text-sm mt-1">Medellín, Antioquia, Colombia</p>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      &copy; 2026 Lavadero Automovilístico Juan. Todos los derechos reservados.
+    </div>
   </footer>
 
 </body>

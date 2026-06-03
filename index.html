@@ -2,107 +2,209 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lavadero Automovilístico Juan</title>
-  <!-- Aquí integras Tailwind y tu CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos base locales -->
   <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0f172a',
+            brandBlue: '#3b82f6',
+            brandBlueHover: '#2563eb',
+            brandGold: '#fbbf24',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-  <!-- Menú de navegación -->
-  <header>
-    <nav class="flex justify-between items-center bg-blue-600 p-4 text-white">
-      <h1 class="text-xl font-bold">Lavadero Juan</h1>
-      <div class="flex gap-4">
-        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
-        <a href="login.html" class="hover:text-yellow-300 transition">Login</a>
-        <a href="register.html" class="hover:text-yellow-300 transition">Register</a>
-        <a href="Lavados.html" class="hover:text-yellow-300 transition">Servicios</a>
-        <a href="Contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+  <!-- Menú de navegación (Flexbox) -->
+  <header class="bg-brandDark sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center py-4 gap-4">
+      <a href="index.html#inicio" class="text-white text-2xl font-extrabold tracking-tight hover:scale-105 transition-all duration-300">
+        Lavadero<span class="text-brandBlue">Juan</span>
+      </a>
+      <div class="flex flex-wrap gap-3 items-center justify-center">
+        <a href="index.html#inicio" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Inicio</a>
+        <a href="Lavados.html" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Servicios</a>
+        <a href="index.html#demostracion" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Demostración</a>
+        <a href="index.html#precios" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Precios</a>
+        <a href="Contacto.html" class="text-white font-semibold px-3 py-2 rounded-lg hover:text-brandGold hover:bg-slate-800 transition duration-300">Contacto</a>
+        <a href="login.html" class="bg-brandBlue hover:bg-brandBlueHover text-white font-bold px-4 py-2 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all duration-300">
+          Ingresar
+        </a>
       </div>
     </nav>
   </header>
 
-  <!-- Contenido principal -->
-  <main class="container text-center">
-    <h1 class="text-3xl font-bold mb-4">Lavadero Automovilístico Juan</h1>
-    <p class="mb-6">
-      Bienvenidos al lavadero automovilístico Juan, donde ofrecemos el mejor servicio y la mejor actitud.
-      Contamos con un servicio VIP con múltiples beneficios como no hacer filas, acceso a todas las opciones de lavado y más.
-    </p>
+  <!-- Contenido principal (Hero) -->
+  <main id="inicio" class="relative bg-gradient-to-br from-brandDark to-slate-900 text-white py-24 px-6 text-center overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+        Lavadero Automovilístico <span class="text-brandBlue">Juan</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+        Bienvenidos al lavadero automovilístico Juan, donde ofrecemos el mejor servicio y la mejor actitud.
+        Contamos con un servicio VIP con múltiples beneficios como no hacer filas, acceso a todas las opciones de lavado y más.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="Lavados.html" class="bg-brandBlue hover:bg-brandBlueHover text-white text-lg font-bold px-8 py-3 rounded-xl shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+          Ver Portafolio de Servicios
+        </a>
+        <a href="index.html#precios" class="bg-slate-800 hover:bg-slate-700 text-white text-lg font-bold px-8 py-3 rounded-xl border border-slate-700 hover:scale-105 active:scale-95 transition-all duration-300">
+          Tabla de Precios
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brandBlue via-brandGold to-emerald-500"></div>
   </main>
 
-  <!-- Lista de lavados -->
-  <section class="p-6">
-    <h2 class="text-2xl font-semibold mb-4">Lista de Lavados</h2>
-    <ul class="list-disc list-inside text-left max-w-md mx-auto">
-      <li>Lavado Básico</li>
-      <li>Lavado Completo</li>
-      <li>Lavado Premium</li>
-      <li>Lavado VIP</li>
+  <!-- Sección Especial: Demostración del Modelo de Caja con Tailwind -->
+  <section class="max-w-2xl mx-auto my-16 p-8 bg-white border-4 border-dashed border-brandBlue rounded-2xl shadow-xl text-center outline outline-2 outline-offset-4 outline-brandGold transition-all duration-300 hover:shadow-2xl">
+    <h3 class="text-2xl font-extrabold text-brandDark mb-4">Detalle del Servicio Especial (Modelo de Caja)</h3>
+    <p class="text-slate-600 mb-4">
+      Esta sección representa de forma explícita el <strong>Modelo de Caja de CSS (Box Model)</strong> mapeado a Tailwind:
+    </p>
+    <ul class="text-left max-w-md mx-auto text-sm text-slate-600 mb-6 space-y-1 list-disc list-inside">
+      <li><strong>Margen externo (Margin):</strong> `my-16 mx-auto` (espacio exterior)</li>
+      <li><strong>Relleno interno (Padding):</strong> `p-8` (espacio entre el contenido y el borde)</li>
+      <li><strong>Borde (Border):</strong> `border-4 border-dashed border-brandBlue`</li>
+      <li><strong>Contorno (Outline):</strong> `outline outline-2 outline-offset-4 outline-brandGold`</li>
     </ul>
+    <p class="font-bold text-slate-800">¡Garantizamos la máxima protección y brillo para tu vehículo!</p>
   </section>
 
-  <!-- Imagen y video -->
-  <section class="p-6 flex flex-col md:flex-row gap-6 justify-center items-center">
-    <div>
-      <h2 class="text-xl font-semibold mb-2">Demostración</h2>
-      <img src="lavadero-automovilistico de carros 768x432.jpg" alt="Lavadero Automovilístico"
-           class="rounded shadow-md w-80 hover:scale-105 transition">
-      <p class="mt-2">Imagen de ejemplo</p>
+  <!-- Lista de lavados rápidos (Grid Responsivo) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
+    <h2 class="text-3xl font-extrabold text-brandDark text-center mb-8">Nuestros Servicios Destacados</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card Básico -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        <div>
+          <h3 class="text-xl font-bold text-brandDark mb-2">Lavado Básico</h3>
+          <p class="text-slate-600 text-sm">Limpieza exterior rápida con jabón neutro de alta espuma y secado manual sin marcas.</p>
+        </div>
+        <div class="mt-6">
+          <div class="text-2xl font-extrabold text-brandBlue mb-1">$30.000</div>
+          <span class="text-xs text-slate-400">Duración estimada: 1 hora</span>
+        </div>
+      </div>
+
+      <!-- Card Completo -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brandBlue flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        <div>
+          <h3 class="text-xl font-bold text-brandDark mb-2">Lavado Completo</h3>
+          <p class="text-slate-600 text-sm">Limpieza exterior profunda y aspirado minucioso de tapicería, alfombras y cajuela.</p>
+        </div>
+        <div class="mt-6">
+          <div class="text-2xl font-extrabold text-brandBlue mb-1">$60.000</div>
+          <span class="text-xs text-slate-400">Duración estimada: 1 hora 30 min</span>
+        </div>
+      </div>
+
+      <!-- Card VIP -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-emerald-500 flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        <div>
+          <h3 class="text-xl font-bold text-brandDark mb-2">Membresía VIP</h3>
+          <p class="text-slate-600 text-sm">Todos los lavados premium incluidos, fila preferencial ilimitada y 2 lavados de cortesía.</p>
+        </div>
+        <div class="mt-6">
+          <div class="text-2xl font-extrabold text-brandBlue mb-1">$150.000</div>
+          <span class="text-xs text-slate-400">Membresía Mensual</span>
+        </div>
+      </div>
+
     </div>
-    <div>
-      <h2 class="text-xl font-semibold mb-2">Video</h2>
-      <iframe width="400" height="250"
-              src="https://www.youtube.com/embed/SK2MO59eFT8"
-              title="Puente de lavado CB de Kärcher"
-              frameborder="0" allowfullscreen
-              class="rounded shadow-md"></iframe>
+  </section>
+
+  <!-- Imagen y video (Flexbox Responsivo) -->
+  <section class="bg-slate-100 py-16" id="demostracion">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 justify-center items-center">
+      
+      <!-- Tarjeta Imagen -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full hover:scale-[1.02] transition-all duration-300">
+        <h2 class="text-2xl font-extrabold text-brandDark mb-4">Nuestra Sede</h2>
+        <img src="lavadero-automovilistico de carros 768x432.jpg" alt="Instalaciones del Lavadero" class="rounded-xl shadow-md w-full h-auto">
+        <p class="mt-4 text-sm text-slate-600">Equipos de lavado con agua filtrada y ceras biodegradables de última generación.</p>
+      </div>
+
+      <!-- Tarjeta Video -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full hover:scale-[1.02] transition-all duration-300">
+        <h2 class="text-2xl font-extrabold text-brandDark mb-4">Proceso Automático</h2>
+        <div class="relative overflow-hidden rounded-xl shadow-md ratio-16x9">
+          <iframe class="w-full h-64 border-0"
+                  src="https://www.youtube.com/embed/SK2MO59eFT8"
+                  title="Puente de lavado CB de Kärcher"
+                  allowfullscreen></iframe>
+        </div>
+        <p class="mt-4 text-sm text-slate-600">Conoce el sistema automático que garantiza la máxima limpieza en tiempo récord.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- Tabla de precios -->
-  <section class="p-6">
-    <h2 class="text-2xl font-semibold mb-4">Precios de Lavados</h2>
-    <table class="table-auto border-collapse border border-gray-400 mx-auto bg-white text-black">
-      <caption class="mb-2 font-bold">Precios de Lavados</caption>
-      <thead>
-        <tr class="bg-blue-600 text-white">
-          <th class="border px-4 py-2">Tipo de lavado</th>
-          <th class="border px-4 py-2">Precio</th>
-          <th class="border px-4 py-2">Tiempo de entrega</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border px-4 py-2">Lavado Básico</td>
-          <td class="border px-4 py-2">$30.000</td>
-          <td class="border px-4 py-2">1 hora</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Lavado Normal</td>
-          <td class="border px-4 py-2">$60.000</td>
-          <td class="border px-4 py-2">1 hora 30 min</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Lavado Premium</td>
-          <td class="border px-4 py-2">$120.000</td>
-          <td class="border px-4 py-2">3 horas</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Lavado VIP</td>
-          <td class="border px-4 py-2">$150.000</td>
-          <td class="border px-4 py-2">4 horas</td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16" id="precios">
+    <h2 class="text-3xl font-extrabold text-brandDark text-center mb-8">Precios y Tiempos de Entrega</h2>
+    <div class="overflow-hidden bg-white rounded-2xl shadow-lg border border-slate-200">
+      <table class="min-w-full divide-y divide-slate-200">
+        <caption class="py-4 text-slate-500 font-bold bg-slate-50 border-b border-slate-200">Lista detallada de servicios</caption>
+        <thead class="bg-brandDark text-white">
+          <tr>
+            <th class="px-6 py-4 text-left font-bold tracking-wider">Tipo de lavado</th>
+            <th class="px-6 py-4 text-left font-bold tracking-wider">Precio</th>
+            <th class="px-6 py-4 text-left font-bold tracking-wider">Tiempo de entrega</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr class="hover:bg-slate-50 transition duration-150">
+            <td class="px-6 py-4 font-semibold text-brandDark">Lavado Básico</td>
+            <td class="px-6 py-4 font-bold text-brandBlue">$30.000</td>
+            <td class="px-6 py-4 text-slate-600">1 hora</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition duration-150">
+            <td class="px-6 py-4 font-semibold text-brandDark">Lavado Normal</td>
+            <td class="px-6 py-4 font-bold text-brandBlue">$60.000</td>
+            <td class="px-6 py-4 text-slate-600">1 hora 30 min</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition duration-150">
+            <td class="px-6 py-4 font-semibold text-brandDark">Lavado Premium</td>
+            <td class="px-6 py-4 font-bold text-brandBlue">$120.000</td>
+            <td class="px-6 py-4 text-slate-600">3 horas</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition duration-150">
+            <td class="px-6 py-4 font-semibold text-brandDark">Lavado VIP</td>
+            <td class="px-6 py-4 font-bold text-brandBlue">$150.000</td>
+            <td class="px-6 py-4 text-slate-600">4 horas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white text-center p-4 mt-6">
-    <h2 class="text-lg font-semibold">Contáctenos</h2>
-    <p>WhatsApp: +57 304 3751091</p>
+  <footer class="bg-brandDark text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl font-extrabold">Lavadero Juan</h2>
+        <p class="text-slate-400 mt-2">Tu auto siempre limpio y brillante, con la mejor atención de la ciudad.</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-brandGold font-bold">WhatsApp: +57 1234567890</p>
+        <p class="text-slate-400 text-sm mt-1">Medellín, Antioquia, Colombia</p>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      &copy; 2026 Lavadero Automovilístico Juan. Todos los derechos reservados.
+    </div>
   </footer>
 
 </body>
